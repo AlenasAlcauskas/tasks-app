@@ -1,3 +1,14 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+app_logout:
+  path: /logout
+  methods: GET
+
+home:
+  path: /{reactRouting}
+  controller: App\Controller\DefaultController::index
+
+/:
+    path: /
+    controller: App\Controller\DefaultController::index

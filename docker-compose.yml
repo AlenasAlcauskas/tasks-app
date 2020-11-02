@@ -1,0 +1,61 @@
+version: '3'
+
+networks:
+  symfony:
+
+services:
+  mysql:
+    image: mysql:5.7.29
+    container_name: mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: nordcode
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_USER: user
+      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD:
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - symfony
+    volumes:
+      - ./docker/persist/db:/var/lib/mysql
+
+  php:
+    build:
+      context: ./docker/php/
+      dockerfile: ./php.dockerfile
+    command: symfony server:start
+    container_name: php-nord
+    volumes:
+      - ./:/var/www/
+    working_dir: /var/www/
+    depends_on:
+      - mysql
+    ports:
+      - "8000:8000"
+    networks:
+      - symfony
+
+  composer:
+    image: composer
+    container_name: composer
+    volumes:
+      - ./:/var/www/
+    working_dir: /var/www/
+    depends_on:
+      - php
+    # user: www-data
+    networks:
+      - symfony
+    entrypoint: ['composer']
+  npm:
+    # command: npm run watch
+    image: node:13.7
+    container_name: npm-nord
+    volumes:
+      - ./:/var/www/
+    working_dir: /var/www/
