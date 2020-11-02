@@ -1,6 +1,8 @@
 ## Run with docker (recommended)
 Install docker and docker-compose if not present on your system
 
+git clone https://github.com/AlenasAlcauskas/tasks-app.git
+
 Navigate to project directory
 
 Run:
