@@ -1,5 +1,5 @@
 import React, {Fragment, useEffect, useState} from 'react';
-import {TasksPageStyle} from '../../_styles/Tasks/TasksPageStyle';
+import {TasksPageStyle} from '../../_styles';
 import {
     Typography,
     AppBar,
@@ -91,12 +91,12 @@ export const Tasks = () => {
                                 anchorEl={anchorEl}
                                 anchorOrigin={{
                                     vertical: 'top',
-                                    horizontal: 'right',
+                                    horizontal: 'right'
                                 }}
                                 keepMounted
                                 transformOrigin={{
                                     vertical: 'top',
-                                    horizontal: 'right',
+                                    horizontal: 'right'
                                 }}
                                 open={menuOpen}
                                 onClose={handleClose}
@@ -123,7 +123,8 @@ export const Tasks = () => {
                          children={<Fab color='primary' className={classes.fab}
                                         onClick={() => setCreateDialogOpen(true)}>
                              <Add/>
-                         </Fab>}/>
+                         </Fab>}
+                />
             </Box>
         </Fragment>
     );

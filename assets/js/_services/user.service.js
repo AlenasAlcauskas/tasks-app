@@ -41,6 +41,10 @@ async function register(name, email, password) {
     return helper.handleResponse(response);
 }
 
+/**
+ *
+ * @returns {Promise<*>}
+ */
 async function logout() {
     const requestOptions = {
         method: 'GET',

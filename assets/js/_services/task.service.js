@@ -37,6 +37,11 @@ async function getTasks() {
     return helper.handleResponse(response);
 }
 
+/**
+ *
+ * @param id
+ * @returns {Promise<*>}
+ */
 async function deleteTask(id) {
     const requestOptions = {
         method: 'DELETE'

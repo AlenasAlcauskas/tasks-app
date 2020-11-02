@@ -8,18 +8,17 @@ import {
     ChevronRight,
     Clear,
     DeleteOutline,
-    Edit,
     FilterList,
     FirstPage,
     LastPage,
     Remove,
     SaveAlt,
-    Search,
+    Search
 } from '@material-ui/icons';
 import {taskService} from '../../_services';
 import {helper} from '../../_helpers';
 import {useSnackbar} from 'notistack';
-import DateFnsUtils from '@date-io/date-fns'; // choose your lib
+import DateFnsUtils from '@date-io/date-fns';
 import {format, isEqual, isBefore, isAfter} from 'date-fns';
 import {
     MuiPickersUtilsProvider,
@@ -83,7 +82,7 @@ export const TasksTable = ({classes, tasks, fetchTasks}) => {
             {title: 'Title', field: 'title'},
             {title: 'Comment', field: 'comment'},
             {title: 'Date', field: 'date'},
-            {title: 'Time Spent (minutes)', field: 'timeSpent', type: 'numeric'},
+            {title: 'Time Spent (minutes)', field: 'timeSpent', type: 'numeric'}
         ]}
 
         data={filteredTasks ? filteredTasks : tasks}
@@ -99,7 +98,7 @@ export const TasksTable = ({classes, tasks, fetchTasks}) => {
             sorting: true,
             exportButton: {
                 csv: true,
-                pdf: false,
+                pdf: false
             },
             exportCsv: (columns, data) => {
                 const doc = new jsPDF();
@@ -200,7 +199,7 @@ export const TasksTable = ({classes, tasks, fetchTasks}) => {
                         </MuiPickersUtilsProvider>
                     </div>
                 </div>
-            ),
+            )
         }}
     />;
 };

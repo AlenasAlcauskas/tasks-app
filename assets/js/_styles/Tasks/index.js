@@ -1,1 +1,1 @@
-export * from './TasksPageStyle'
+export * from './TasksPageStyle';
