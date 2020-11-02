@@ -46,8 +46,8 @@ export const Tasks = () => {
             error => helper.enqueueErrorSnackbar(enqueueSnackbar, error?.message));
     };
 
-    const taskEditHandler = (event) => {
-        setTask({...task, [event.target.id]: event.target.value});
+    const taskEditHandler = ({target: {id, value}}) => {
+        setTask({...task, [id]: value});
     };
 
     const logOut = () => {

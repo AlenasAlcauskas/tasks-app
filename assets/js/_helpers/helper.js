@@ -1,5 +1,3 @@
-import {userService} from '../_services';
-
 export const helper = {
     handleResponse,
     checkResponse,
