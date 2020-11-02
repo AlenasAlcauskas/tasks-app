@@ -67,7 +67,7 @@ export const CreateTaskDialog = (props) => {
             <TextField
                 margin='dense'
                 id='time'
-                label='Time spent (hours)'
+                label='Time spent (minutes)'
                 type='number'
                 fullWidth
                 onChange={taskEditHandler}

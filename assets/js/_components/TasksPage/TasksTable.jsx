@@ -83,7 +83,7 @@ export const TasksTable = ({classes, tasks, fetchTasks}) => {
             {title: 'Title', field: 'title'},
             {title: 'Comment', field: 'comment'},
             {title: 'Date', field: 'date'},
-            {title: 'Time Spent (hours)', field: 'timeSpent', type: 'numeric'},
+            {title: 'Time Spent (minutes)', field: 'timeSpent', type: 'numeric'},
         ]}
 
         data={filteredTasks ? filteredTasks : tasks}
