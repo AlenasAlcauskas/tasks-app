@@ -18,6 +18,7 @@ import {useSnackbar} from 'notistack';
 import {TasksTable} from './TasksTable';
 import {helper} from '../../_helpers';
 import {CreateTaskDialog} from './CreateTaskDialog';
+import {format} from 'date-fns';
 
 export const Tasks = () => {
 
@@ -26,7 +27,7 @@ export const Tasks = () => {
     const {enqueueSnackbar} = useSnackbar();
     const [auth, setAuth] = useState(true);
     const [anchorEl, setAnchorEl] = useState(null);
-    const [task, setTask] = useState({'date': new Date()});
+    const [task, setTask] = useState({'date': format(new Date(), 'yyyy-MM-dd')});
     const [tasks, setTasks] = useState([]);
     const menuOpen = Boolean(anchorEl);
 
