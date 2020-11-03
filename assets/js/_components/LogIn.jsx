@@ -24,7 +24,7 @@ export const SignIn = () => {
     const {enqueueSnackbar} = useSnackbar();
     const [credentials, setCredentials] = useState({});
 
-    const handleRegistrationField = ({target : {name, value}}) => {
+    const handleLoginField = ({target : {name, value}}) => {
         setCredentials({...credentials, [name]: value})
     };
 
@@ -49,7 +49,7 @@ export const SignIn = () => {
                         name='email'
                         autoComplete='email'
                         autoFocus
-                        onChange={handleRegistrationField}
+                        onChange={handleLoginField}
                     />
                     <TextField
                         variant='outlined'
@@ -61,7 +61,7 @@ export const SignIn = () => {
                         type='password'
                         id='password'
                         autoComplete='current-password'
-                        onChange={handleRegistrationField}
+                        onChange={handleLoginField}
                     />
                     <Button
                         fullWidth
