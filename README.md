@@ -14,7 +14,7 @@ sensible-browser http://localhost:8000
 ```
 
 
-Alternatively, run each command inside the build.sh file in its respective order
+Alternatively, run each command inside the build.sh file in its respective order before running docker compose up
 
 ## Run without docker
 
